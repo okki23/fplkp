@@ -61,26 +61,26 @@
 
     <form accept-charset="UTF-8" role="form" method="POST" action="<?php echo base_url('login/auth'); ?>">
       <div class="form-group has-feedback">
-        <input type="text" name="username" class="form-control" placeholder="Username">
+        <input type="text" name="username" class="form-control" placeholder="Nama Pengguna">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Kata Sandi">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <select name="ses_log" class="form-control">
-          <option value=""> --Login Sebagai-- </option>
+          <option value=""> --Masuk Sebagai-- </option>
           <option value="1"> Asesor </option>
           <option value="2"> Lembaga </option>
           <option value="3"> Administrator </option>
         </select>
       </div>
       <div class="row">
-      <a href="<?php echo base_url();?>"> Back to homepage</a>
+      <a href="<?php echo base_url();?>"> Halaman Utama</a>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
         </div>
         <!-- /.col -->
       </div>

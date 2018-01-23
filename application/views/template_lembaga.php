@@ -52,7 +52,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="javascript::void(0)" class="logo">
+    <a href="<?php echo base_url('dashboard_lembaga'); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>FPLKP</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -71,7 +71,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url('assets/backend/'); ?>img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Lembaga</span>
+              <span class="hidden-xs"> <?php echo $this->session->userdata('username'); ?> </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -79,14 +79,15 @@
                 <img src="<?php echo base_url('assets/backend/'); ?>img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                <?php echo $this->session->userdata('username'); ?>  - Lembaga 
+                
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
               <div align="center">
-                  <a href="<?php echo base_url('login/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('user_lembaga/ganti_password'); ?>" class="btn btn-default btn-flat"> <i class="fa fa-undo" aria-hidden="true"></i> Ganti Password</a> 
+                  <a href="<?php echo base_url('login/logout'); ?>" class="btn btn-default btn-flat"> <i class="fa fa-sign-out" aria-hidden="true"></i> Keluar</a>
                 </div>
               </li>
               <!-- Menu Footer-->

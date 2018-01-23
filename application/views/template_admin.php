@@ -71,7 +71,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url('assets/backend/'); ?>img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Administrator</span>
+              <span class="hidden-xs"> Administrator </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -79,15 +79,15 @@
                 <img src="<?php echo base_url('assets/backend/'); ?>img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                Administrator
                  
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
               <div align="center">
-                  <a href="<?php echo base_url('home'); ?>" target="_blank" class="btn btn-default btn-flat">View Site</a>
-                  <a href="<?php echo base_url('login/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('home'); ?>" target="_blank" class="btn btn-default btn-flat"> <i class="fa fa-eye" aria-hidden="true"></i> View Site</a>
+                  <a href="<?php echo base_url('login/logout'); ?>" class="btn btn-default btn-flat"> <i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
                 </div>
               </li>
               <!-- Menu Footer-->
@@ -111,23 +111,66 @@
       <ul class="sidebar-menu" data-widget="tree">
       
         <li class="treeview">
-          <a href="javascript::void(0);">
-            <i class="fa fa-database"></i> <span>Master</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('lembaga'); ?>"><i class="fa fa-circle-o"></i>Lembaga</a></li>
-            <li><a href="<?php echo base_url('asesor'); ?>"><i class="fa fa-circle-o"></i>Asesor</a></li>
-            <li><a href="<?php echo base_url('posisi'); ?>"><i class="fa fa-circle-o"></i>Posisi</a></li>
-            <li><a href="<?php echo base_url('kejuruan'); ?>"><i class="fa fa-circle-o"></i>Kejuruan</a></li>
-            <li><a href="<?php echo base_url('sektor_kejuruan'); ?>"><i class="fa fa-circle-o"></i>Sektor Kejuruan</a></li>
-            <li><a href="<?php echo base_url('grup_kejuruan'); ?>"><i class="fa fa-circle-o"></i>Group Kejuruan</a></li>
-            <li><a href="<?php echo base_url('user_lembaga'); ?>"><i class="fa fa-circle-o"></i>User Lembaga</a></li>
-            <li><a href="<?php echo base_url('user_asesor'); ?>"><i class="fa fa-circle-o"></i>User Asesor</a></li>
-            <li><a href="<?php echo base_url('slider'); ?>"><i class="fa fa-circle-o"></i>Slider</a></li>
-          </ul>
+         
+          <li class="header">MENU MASTER</li>
+     
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-university" aria-hidden="true"></i> <span> Lembaga </span>
+       </a>
+     </li>
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span> Asesor </span>
+       </a>
+     </li>
+ 
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-sitemap" aria-hidden="true"></i> <span> Posisi / Jabatan</span>
+       </a>
+     </li>
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-code-fork" aria-hidden="true"></i> <span>Kejuruan</span>
+       </a>
+     </li>
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-server" aria-hidden="true"></i><span>Sektor Kejuruan</span>
+       </a>
+     </li>
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-clipboard" aria-hidden="true"></i><span>Group Kejuruan</span>
+       </a>
+     </li>
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-users" aria-hidden="true"></i><span>User Lembaga</span>
+       </a>
+     </li>
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-users" aria-hidden="true"></i><span>User Asesor</span>
+       </a>
+     </li>
+
+     <li class="treeview">
+       <a href="#">
+       <i class="fa fa-columns" aria-hidden="true"></i><span>Slider</span>
+       </a>
+     </li>
+
+         
         </li>
        
         <!-- <li class="treeview">

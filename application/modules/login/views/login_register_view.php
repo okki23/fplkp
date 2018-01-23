@@ -53,7 +53,7 @@
      <b>FPLKP DKI JAKARTA</b> 
   </div>
   <div class="login-logo">
-    <h3>Register Form </h3>
+    <h3>Formulir Registrasi </h3>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -84,10 +84,10 @@
   
 
       <div class="row">
-      <a href="<?php echo base_url();?>"> Back to homepage</a>
+      <a href="<?php echo base_url();?>"> Halaman Utama</a>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Daftar</button>
         </div>
         <!-- /.col -->
       </div>
