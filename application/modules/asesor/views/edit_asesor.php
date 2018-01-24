@@ -10,18 +10,11 @@
         <!-- /.box-header -->
         <div class="box-body">
           <div class="row">
+            <form action="<?php echo base_url('asesor/edit');?>" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<?php echo $asesor->id; ?>">
             <div class="col-md-12">
               
-
-            id
-nama
-tempat_lahir
-tanggal_lahir
-email
-no_telp
-alamat
-pendidikan
-foto
+ 
               <div class="form-group">
                 <label>Nama :</label>
 
@@ -98,23 +91,39 @@ foto
 
 
               <div class="form-group">
-              <label>Minimal</label>
+              <label>Pendidikan</label>
                 <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
-
-               
-                   
-                </div>
+                  <option selected="selected">SD</option>
+                  <option>SMP</option>
+                  <option>SMA/Sederajat</option>
+                  <option>SMK/Sederajat</option>
+                  <option>S1</option>
+                  <option>S2</option>
+                  <option>S3</option>
+                </select> 
+               </div>
          
+
+               <div class="form-group">
+                <label for="exampleInputEmail1">
+                  Upload Foto  
+                </label>
+                <input type="file" name="upload_stnkx" id="upload_stnkx" class="form-control"  required="required" />
+                  <input type="hidden" name="upload_stnk" id="upload_stnk"  class="form-control"   />
+                  
               </div>
 
+              <div class="form-group">
+              <div  align="center">
+                    <button type="submit" name="save" class="btn btn-large btn-primary" > <i class="fa fa-archive"></i> Submit Claim </button>
+                    <a class="btn btn-danger" href="<?php echo base_url('asesor'); ?>"> <i class="fa fa-reply-all"></i> Back </a>
+                </div>
+              </div>
+               
+
+              </div>
+            </form>
+ 
               
           <!-- 
               <div class="form-group">

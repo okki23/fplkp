@@ -27,7 +27,14 @@ class Posisi extends MY_Controller {
 
 	public function edit($id = NULL) {
         $data['content'] = 'posisi/edit_posisi'; 
-		$data['title'] = $this->data['meta_title'];       
+        $data['title'] = $this->data['meta_title'];      
+        
+        if($this->uri->segment(3) == ''){
+            $data['legend_form'] = 'Add'; 
+        }else{
+            $data['legend_form'] = 'Edit'; 
+        }
+        
         if($id == '' || empty($id) || $id == NULL){
             $data['posisi'] = $this->ma->get_new($this->parsing_form_input);
         }else{
@@ -76,7 +83,7 @@ class Posisi extends MY_Controller {
     }
 
     public function save() {       
-        $data = $this->ma->array_from_post(array('id','nama_posisi','jumlah_donasi','tanggal_donasi'));
+        $data = $this->ma->array_from_post(array('id','nama_posisi'));
         $id = isset($data['id']) ? $data['id'] : NULL;
         $exe = $this->ma->save($data,$this->tablename,$this->pk, $id);
         redirect(base_url('posisi'));

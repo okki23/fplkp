@@ -71,7 +71,7 @@
       <div class="form-group has-feedback">
         <select name="ses_log" class="form-control">
           <option value=""> --Masuk Sebagai-- </option>
-          <option value="1"> Asesor </option>
+          <!-- <option value="1"> Asesor </option> -->
           <option value="2"> Lembaga </option>
           <option value="3"> Administrator </option>
         </select>

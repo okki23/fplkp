@@ -20,7 +20,7 @@ class M_user_lembaga extends MY_Model {
 
 	public function list_user_lembaga(){
 		return $this->db->query('select a.*,b.nama_lembaga from m_user_lembaga a
-														left join m_lembaga b on b.id = a.id_lembaga')->result();
+								inner join m_lembaga b on b.id = a.id_lembaga ')->result();
 	}
 	
 	

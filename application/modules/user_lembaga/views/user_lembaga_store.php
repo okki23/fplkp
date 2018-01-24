@@ -9,24 +9,24 @@
                 <form class="form-horizontal" action="<?php echo base_url('user_lembaga/save'); ?>" method="POST">
                     <input type="hidden" name="id" value="<?php echo $parseform->id; ?>">
                     <div class="form-group">
-                        <label class="col-md-3 control-label">user_lembaganame
+                        <label class="col-md-3 control-label">Username
                         </label>
                         <div class="col-md-9">
-                            <input type="text" name="user_lembaganame" value="<?php echo $parseform->user_lembaganame; ?>" class="form-control" placeholder="user_lembaganame" />
+                            <input type="text" name="username" value="<?php echo $parseform->username; ?>" class="form-control" placeholder="Nama Pengguna" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Password</label>
                         <div class="col-md-9">
-                            <input type="password" name="password" class="form-control" placeholder="Password" />
+                            <input type="password" name="password" class="form-control" placeholder="Kata Sandi" />
                             <h4> <span class="label label-danger">  HARAP KOSONGKAN SAJA APABILA PASSWORD TIDAK INGIN DIRUBAH!!!
-                                    </div>
+                        </div>
                     </div>
                    
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Lembaga</label>
                                         <div class="col-md-9">
-                                            <select name="id_pegawai" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
+                                            <select name="id_lembaga" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
                                                 <option value = "">--Pilih--</option>
                                                 <?php
                                                 foreach ($opt_lembaga as $row) {
@@ -41,25 +41,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Level</label>
-                                        <div class="col-md-9">
-                                            <select name="level" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-white">
-                                                <option value = "">--Pilih--</option>
-                                                <option value = "1" <?php if ($parseform->level == '1') {
-                                                    echo "selected=selected";
-                                                } ?> >Administrator</option>
-                                                <option value = "2" <?php if ($parseform->level == '2') {
-                                                    echo "selected=selected";
-                                                } ?> >Member</option>
-                                                <option value = "3" <?php if ($parseform->level == '3') {
-                                                    echo "selected=selected";
-                                                } ?> >Marketing</option>
-                                                 
-
-                                            </select>
-                                        </div>
-                                    </div>
+                                
 
                                     <div  align="center">
                                         <button type="submit" name="save" class="btn btn-large btn-primary" > <i class="fa fa-archive"></i> Save </button>

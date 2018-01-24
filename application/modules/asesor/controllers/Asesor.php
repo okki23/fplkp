@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class asesor extends MY_Controller {
     
-    var $parsing_form_input = array('id','nama','tempat_lahir','tanggal_lahir','jen_kel','no_telp','email','bio','position','fb_link','twitter_link','googleplus_link','foto','publish');
+    var $parsing_form_input = array('id','nama','tempat_lahir','tanggal_lahir','email','no_telp','alamat','pendidikan','foto');
     var $tablename = 'm_asesor';
     var $pk = 'id';
     

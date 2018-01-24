@@ -112,55 +112,55 @@
         <li class="header">MENU</li>
      
 
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="<?php echo base_url('profil_lembaga/show/'.$this->session->userdata('user_id')); ?>">
           <i class="fa fa-id-card" aria-hidden="true"></i> <span>Profil</span>
           </a>
         </li>
 
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="<?php echo base_url('profil_lembaga/show/'.$this->session->userdata('user_id')); ?>">
           <i class="fa fa-camera" aria-hidden="true"></i> <span>Foto</span>
           </a>
         </li>
 
-        <li class="treeview">
+        <li>
           <a href="#">
           <i class="fa fa-university" aria-hidden="true"></i> <span>Kejuruan</span>
           </a>
         </li>
 
-        <li class="treeview">
+        <li>
           <a href="#">
           <i class="fa fa-users" aria-hidden="true"></i><span>Pegawai</span>
           </a>
         </li>
 
-        <li class="treeview">
+        <li>
           <a href="#">
           <i class="fa fa-server" aria-hidden="true"></i><span>Data Peserta</span>
           </a>
         </li>
 
-        <li class="treeview">
+        <li>
           <a href="#">
           <i class="fa fa-clipboard" aria-hidden="true"></i><span>Pelaporan</span>
           </a>
         </li>
 
-        <li class="treeview">
+        <li>
           <a href="#">
           <i class="fa fa-window-maximize" aria-hidden="true"></i><span>Tata Kelola</span>
           </a>
         </li>
 
-        <li class="treeview">
+        <li>
           <a href="#">
           <i class="fa fa-trophy" aria-hidden="true"></i><span>Akreditasi</span>
           </a>
         </li>
 
-        <li class="treeview">
+        <li>
           <a href="#">
           <i class="fa fa-columns" aria-hidden="true"></i><span>Pedoman</span>
           </a>

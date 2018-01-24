@@ -25,8 +25,7 @@ class Login extends MY_Controller {
     }
 
     public function auth(){
-      
-      //echo 1;
+       
       $datapos = array('username'=>$this->input->post('username'),
                       'password'=>md5($this->input->post('password')));
       $cond = $this->input->post('ses_log');
@@ -46,7 +45,8 @@ class Login extends MY_Controller {
           redirect(base_url('login'));
         }
     
-      }else if($cond == '2'){
+      }else if($cond == '2'){ 
+
           $avail = $this->m_login->auth_lembaga($datapos)->num_rows();
           $usersess = $this->m_login->auth_lembaga($datapos)->row();
           
@@ -55,21 +55,29 @@ class Login extends MY_Controller {
             $this->session->set_userdata($list);
             redirect(base_url('dashboard_lembaga'));  
           }else{
-            redirect(base_url('login'));
+            
+            echo "<script language=javascript>
+            alert('User di banned!');
+            window.location='" . base_url('login') . "';
+                </script>";
+           
           }
 
         }else if($cond == '3'){
-          $avail = $this->m_login->auth($datapos)->num_rows();
-          $usersess = $this->m_login->auth($datapos)->row();
-    
+        
+          $avail = $this->m_login->auth_lembaga($datapos)->num_rows();
+          $usersess = $this->m_login->auth_lembaga($datapos)->row();
+          
           if($avail > 0){
             $list = array('username'=>$usersess->username,'user_group'=>'3','user_id'=>$usersess->id);
             $this->session->set_userdata($list); 
             redirect(base_url('dashboard'));  
           }else{
+
             redirect(base_url('login'));
+             
           }
-          
+           
           
       }else{
       

@@ -69,7 +69,7 @@
            
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="<?php echo base_url('dashboard'); ?>" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url('assets/backend/'); ?>img/user2-160x160.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"> Administrator </span>
             </a>
@@ -115,60 +115,60 @@
           <li class="header">MENU MASTER</li>
      
 
-     <li class="treeview">
-       <a href="#">
+     <li>
+       <a href="<?php echo base_url('lembaga'); ?>"> 
        <i class="fa fa-university" aria-hidden="true"></i> <span> Lembaga </span>
        </a>
      </li>
 
-     <li class="treeview">
-       <a href="#">
+     <!-- <li>
+     <a href="<?php echo base_url('asesor'); ?>"> 
        <i class="fa fa-user-circle-o" aria-hidden="true"></i> <span> Asesor </span>
        </a>
-     </li>
+     </li> -->
  
 
-     <li class="treeview">
-       <a href="#">
+     <li>
+     <a href="<?php echo base_url('posisi'); ?>"> 
        <i class="fa fa-sitemap" aria-hidden="true"></i> <span> Posisi / Jabatan</span>
        </a>
      </li>
 
-     <li class="treeview">
-       <a href="#">
+     <li>
+     <a href="<?php echo base_url('kejuruan'); ?>"> 
        <i class="fa fa-code-fork" aria-hidden="true"></i> <span>Kejuruan</span>
        </a>
      </li>
 
-     <li class="treeview">
-       <a href="#">
+     <li>
+     <a href="<?php echo base_url('sektor_kejuruan'); ?>"> 
        <i class="fa fa-server" aria-hidden="true"></i><span>Sektor Kejuruan</span>
        </a>
      </li>
 
-     <li class="treeview">
-       <a href="#">
+     <li>
+     <a href="<?php echo base_url('group_kejuruan'); ?>"> 
        <i class="fa fa-clipboard" aria-hidden="true"></i><span>Group Kejuruan</span>
        </a>
      </li>
 
-     <li class="treeview">
-       <a href="#">
+     <li>
+     <a href="<?php echo base_url('user_lembaga'); ?>"> 
        <i class="fa fa-users" aria-hidden="true"></i><span>User Lembaga</span>
        </a>
      </li>
 
-     <li class="treeview">
-       <a href="#">
+     <!-- <li>
+     <a href="<?php echo base_url('user_asesor'); ?>"> 
        <i class="fa fa-users" aria-hidden="true"></i><span>User Asesor</span>
        </a>
-     </li>
+     </li> -->
 
-     <li class="treeview">
-       <a href="#">
+     <!-- <li>
+     <a href="<?php echo base_url('slider'); ?>"> 
        <i class="fa fa-columns" aria-hidden="true"></i><span>Slider</span>
        </a>
-     </li>
+     </li> -->
 
          
         </li>
@@ -282,93 +282,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/backend/'); ?>js/demo.js"></script>
 
+<script src="<?php echo base_url('assets/js/'); ?>custom.js"></script>
 
-
-
-
-<script>
- $(document).ready(function(){
-  $('.select2').select2();
- });
-$('#example1').DataTable();
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    });
-	
-	
-  $(function () {
-    
-  
-    //Datemask dd/mm/yyyy
-    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-    //Datemask2 mm/dd/yyyy
-    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-    //Money Euro
-    $('[data-mask]').inputmask()
-
-    //Date range picker
-    $('#reservation').daterangepicker()
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' })
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-      }
-    )
-
-    //Date picker
-    $('.datepicker').datepicker({
-      autoclose: true,
-      format: 'yyyy-mm-dd'
-    })
-
-    //iCheck for checkbox and radio inputs
-    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-      checkboxClass: 'icheckbox_minimal-blue',
-      radioClass   : 'iradio_minimal-blue'
-    })
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass   : 'iradio_minimal-red'
-    })
-    //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass   : 'iradio_flat-green'
-    })
-
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
-
-    //Timepicker
-    $('.timepicker').timepicker({
-      showInputs: false
-    })
-	
-	
-	
-  })
-</script>
+ 
 </body>
 </html>

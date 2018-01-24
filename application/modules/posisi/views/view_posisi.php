@@ -1,7 +1,7 @@
 <!-- SELECT2 EXAMPLE -->
 <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title"><?php echo '<b>'.strtoupper($this->uri->segment(1)).'</b>'; ?></h3>
+          <h3 class="box-title"><?php echo '<b>'.str_replace("_"," ",strtoupper($this->uri->segment(1))).'</b>'; ?></h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -35,7 +35,7 @@
                         <td><?php echo $value->nama_posisi; ?> </td>                   
                         <td>
                           
-                        <a href="<?php echo base_url('posisi/detail/'.$value->id); ?>" class="label label-info" > <i class="fa fa-id-card"></i> Detail </a> &nbsp;    
+                        <a href="<?php echo base_url('posisi/edit/'.$value->id); ?>" class="label label-info" > <i class="fa fa-pencil"></i> Edit </a> &nbsp;    
                         <a href="<?php echo base_url('posisi/delete/'.$value->id); ?>" class="label label-danger" onclick="javascript:return confirm('Anda yakin ingin menghapus data ini?')" > <i class="fa fa-trash"></i> Delete </a> &nbsp;    
                         </td>
                     </tr>

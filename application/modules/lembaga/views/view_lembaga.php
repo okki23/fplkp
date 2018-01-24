@@ -1,7 +1,7 @@
 <!-- SELECT2 EXAMPLE -->
 <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title"><?php echo '<b>'.strtoupper($this->uri->segment(1)).'</b>'; ?></h3>
+          <h3 class="box-title"><?php echo '<b>'.str_replace("_"," ",strtoupper($this->uri->segment(1))).'</b>'; ?></h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -45,8 +45,8 @@
                           echo '<span  class="label label-success">  <i class="fa fa-check"></i> Validated </span> &nbsp; &nbsp;';
                         }
                         ?>
-                       
-                        <a href="<?php echo base_url('lembaga/detail/'.$value->id); ?>" class="label label-info" > <i class="fa fa-id-card"></i> Detail </a> &nbsp;    
+                       <a href="javascript:void(0);" data-value="<?php echo $value->id; ?>" data-name="<?php echo $value->nama_lembaga; ?>" class="label label-info assign_modal">  <i class="fa fa-id-card"></i> Detail </a>
+                          &nbsp;    
                         <a href="<?php echo base_url('lembaga/delete/'.$value->id); ?>" class="label label-danger" onclick="javascript:return confirm('Anda yakin ingin menghapus data ini?')" > <i class="fa fa-trash"></i> Delete </a> &nbsp;    
                         </td>
                     </tr>
@@ -69,4 +69,35 @@
         </div>
       </div>
       <!-- /.box -->
- 
+
+      
+<!-- Modal -->
+<div class="modal fade" id="modal_assign_product" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Detail Lembaga</h4>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="id_store" id="id_store" class="form-control">
+        <input type="hidden" name="user_id" id="user_id" value="<?php echo $this->session->userdata('user_id'); ?>">
+        
+      <div class="container">
+        <div class="col-md-6">
+       
+
+                  sss
+
+
+        </div>
+      </div>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+        <button type="button" id="save_assign_premi" class="btn btn-primary">Ajukan Premi</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_lembaga extends MY_Controller {
 
-  var $parsing_form_input = array('id','username','password','id_lembaga','level');
+  var $parsing_form_input = array('id','username','password','id_lembaga','status');
   var $tablename = 'm_user_lembaga';
   var $pk = 'id';
 
@@ -26,12 +26,43 @@ class User_lembaga extends MY_Controller {
 
         //session
         $data['user_name'] = $this->session->userdata('user_name');
-        $data['user_group'] = strtoupper(level_help($this->session->user_data('user_group')));
+        $data['user_group'] = strtoupper(level_help($this->session->userdata('user_group')));
         $data['user_id'] = $this->session->userdata('user_id');
 
-        $this->load->view('template_lembaga', $data);
+        $this->load->view('template_admin', $data);
     }
 
+    public function stat_banned(){
+        
+        $id = $this->uri->segment(3);
+
+        $this->db->set('status', '2');
+        $this->db->where('id',$id);
+        $this->db->update('m_user_lembaga'); 
+
+        
+        //$this->db->set('status','2')->where('id',$id)->get('m_user_lembaga');
+        echo "<script language=javascript>
+        alert('User di banned!');
+        window.location='" . base_url('user_lembaga') . "';
+            </script>";
+
+    }
+
+    public function un_stat_banned(){
+        $id = $this->uri->segment(3);
+
+        $this->db->set('status', '1');
+        $this->db->where('id',$id);
+        $this->db->update('m_user_lembaga'); 
+
+        
+        //$this->db->set('status','2')->where('id',$id)->get('m_user_lembaga');
+        echo "<script language=javascript>
+        alert('User di lepas banned!');
+        window.location='" . base_url('user_lembaga') . "';
+            </script>";
+    }
     public function ganti_password(){
         $data['caption_view'] = "Ganti Password";
         $data['title'] = $this->data['meta_title'];
@@ -42,7 +73,7 @@ class User_lembaga extends MY_Controller {
          $data['user_group'] = strtoupper(level_help($this->session->userdata('user_group')));
          $data['user_id'] = $this->session->userdata('user_id');
  
-        $this->load->view('template_lembaga', $data);
+        $this->load->view('template_admin', $data);
     }
 
     public function pro_changepass(){
@@ -86,19 +117,19 @@ class User_lembaga extends MY_Controller {
           $data['content'] = 'user_lembaga/user_lembaga_store';
           
         //session
-        $data['user_name'] = $this->session->user_data('user_name');
-        $data['user_group'] = strtoupper(level_help($this->session->user_data('user_group')));
-        $data['user_id'] = $this->session->user_data('user_id');
+        $data['user_name'] = $this->session->userdata('user_name');
+        $data['user_group'] = strtoupper(level_help($this->session->userdata('user_group')));
+        $data['user_id'] = $this->session->userdata('user_id');
 
-          $this->load->view('template_lembaga', $data);
+          $this->load->view('template_admin', $data);
     }
 
 
     public function save(){
 
       $datapos = $this->m_umanagement->array_from_post($this->parsing_form_input);
-    //   var_dump($datapos);
-	//   exit();
+      var_dump($datapos);
+	  exit();
 	  $id = isset($datapos['id']) ? $datapos['id'] : '';
       $save = $this->m_umanagement->save_account($datapos,$id,$this->tablename);
 	  //echo $save;
